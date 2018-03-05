@@ -36,7 +36,7 @@ def inline(call):
 
 def del2(id):
     try:
-      bot.send_message(id, '30 минут прошло! Вирт остановлен!')
+      bot.send_message(id, '25 минут прошло! Вирт остановлен!')
       del info.lobby.game[id]
     except:
       pass
@@ -62,7 +62,7 @@ def s(m):
 @bot.message_handler(commands=['lobby'])
 def m(m):
     if m.chat.id not in info.lobby.game:
-        t=threading.Timer(1800, del2, args=[m.chat.id])
+        t=threading.Timer(1500, del2, args=[m.chat.id])
         t.start()
         bot.send_message(441399484, 'Вирт начался где-то!')
         Keyboard=types.InlineKeyboardMarkup()
