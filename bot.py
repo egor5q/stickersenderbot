@@ -18,7 +18,7 @@ def inline(call):
       for chats in info.lobby.game:
         if call.from_user.id not in info.lobby.game[chats]['players']:
             if len(info.lobby.game[chats]['players'])<2:
-              info.lobby.game[chats]['players'].update(createuser(call.from_user.id))
+              info.lobby.game[chats]['players'].update(createuser(call.from_user.id, chats))
               bot.send_message(chats, 'Аноним присоединился!')
               if len(info.lobby.game[chats]['players'])>1:
                 bot.send_message(chats, 'Поехали')
@@ -47,7 +47,12 @@ def m(m):
     else:
         pass
 
-
+def namechoice(id):
+    x=random.choice(randlist)
+    while x in info.lobby.game[id]['nicks']:
+        x=random.choice(randlist)
+        
+        
 def begin(id):
     for ids in info.lobby.game[id]['players']:
         bot.send_message(ids, 'Пишите сюда что то')
@@ -65,14 +70,15 @@ def h(m):
     
 def createroom(id):
   return{id:{
+      'nicks':[],
     'players':{
     }
      }
       }   
         
-def createuser(id):
+def createuser(id, chatid):
     return{id:{
-           'name':random.choice(randlist)
+           'name':namechoice(chatid)
           }
           }
        
