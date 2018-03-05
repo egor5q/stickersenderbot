@@ -16,7 +16,7 @@ bot = telebot.TeleBot(token)
 def inline(call):
     if call.data=='join':
         if call.from_user.id not in info.lobby.game[call.chat.id]['players']:
-            pass
+            info.lobby.game[call.chat.id]['players']
 
 
 
@@ -36,8 +36,10 @@ def m(m):
 
 def createroom(id)
 return{id:{
+    'players':{
     'player1':None,
     'player2':None
+    }
 }
     
         
