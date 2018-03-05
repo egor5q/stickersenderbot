@@ -49,7 +49,7 @@ def begin(id):
 def h(m):
     for ids in info.lobby.game:
         if m.from_user.id in info.lobby.game[ids]['players']:
-            bot.send_message(ids, 'Аноним:'
+            bot.send_message(ids, 'Аноним:\n'+m.text)
 
     
 def createroom(id):
