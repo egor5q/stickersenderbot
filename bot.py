@@ -16,11 +16,11 @@ randlist=['Шальная Императрица', 'Равен', 'Котейка
 def inline(call):
     if call.data=='join':
       for chats in info.lobby.game:
-        if call.from_user.id not in info.lobby.game['alreadyplay']:
+        if call.from_user.id not in info.lobby.alreadyplay:
                if len(info.lobby.game[chats]['players'])<8:
                   info.lobby.game[chats]['players'].update(createuser(call.from_user.id, chats))
                   bot.send_message(chats, 'Аноним присоединился!')
-                  info.lobby.game['alreadyplay'].append(call.from_user.id)
+                  info.lobby.alreadyplay.append(call.from_user.id)
                if len(info.lobby.game[chats]['players'])>7:
                 bot.send_message(chats, 'Набор окончен!')
                 begin(chats)
