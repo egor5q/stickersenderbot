@@ -55,10 +55,13 @@ def s(m):
 def m(m):
     bot.send_message(441399484, m.chat.id)
     if m.chat.id not in info.lobby.game:
+      if m.chat.id==-1001117073605:
         Keyboard=types.InlineKeyboardMarkup()
         info.lobby.game.update(createroom(m.chat.id))
         Keyboard.add(types.InlineKeyboardButton(text='Тык', callback_data='join'))
         msg=bot.send_message(m.chat.id, 'Начинаем! жмите на кнопку, чтобы присоединиться', reply_markup=Keyboard)
+      else:
+        bot.send_message(m.chat.id, 'Вашего чата нет в вип-списке')
     else:
         pass
 
