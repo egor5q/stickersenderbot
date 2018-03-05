@@ -15,9 +15,10 @@ randlist=['Шальная Императрица', 'Равен', 'Котейка
 @bot.callback_query_handler(func=lambda call:True)
 def inline(call):
     if call.data=='join':
-      z=0
       for chats in info.lobby.game:
-        if call.from_user.id in info.lobby.game[chats]['players']:
+        z=0
+        for chat2 in info.lobby.game:
+          if call.from_user.id in info.lobby.game[chat2]['players']:
             z+=1   
         if z==0:
              if call.from_user.id not in info.lobby.game[chats]['players']:
