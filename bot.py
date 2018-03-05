@@ -71,7 +71,7 @@ def begin(id):
 def h(m):
     for ids in info.lobby.game:
         if m.from_user.id in info.lobby.game[ids]['players']:
-          
+          if m.chat.id>0:
             bot.send_message(ids, info.lobby.game[ids]['players'][m.from_user.id]['name']+':\n'+m.text)
           
             
