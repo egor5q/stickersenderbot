@@ -15,12 +15,13 @@ bot = telebot.TeleBot(token)
 @bot.callback_query_handler(func=lambda call:True)
 def inline(call):
     if call.data=='join':
-        if call.from_user.id not in info.lobby.game[call.chat.id]['players']:
-            if len(info.lobby.game[call.chat.id]['players'])<2:
-              info.lobby.game[call.chat.id]['players'].update(createuser(call.from_user.id))
+      for chats in info.lobby.game:
+        if call.from_user.id not in info.lobby.game[chats]['players']:
+            if len(info.lobby.game[chats]['players'])<2:
+              info.lobby.game[chats]['players'].update(createuser(call.from_user.id))
               bot.send_message(call.chat.id, 'Аноним присоединился!')
-              if len(info.lobby.game[call.chat.id]['players'])>1:
-                bot.send_message(call.chat.id, 'Поехали')
+              if len(info.lobby.game[chats]['players'])>1:
+                bot.send_message(chats, 'Поехали')
                 begin(id)
             else:
                 pass
@@ -49,7 +50,10 @@ def begin(id):
 def h(m):
     for ids in info.lobby.game:
         if m.from_user.id in info.lobby.game[ids]['players']:
+          try:
             bot.send_message(ids, 'Аноним:\n'+m.text)
+          except:
+            bot.send_message(ids, 'Какой то пидорас не открыл диалог с ботом!')
 
     
 def createroom(id):
