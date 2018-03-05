@@ -22,7 +22,7 @@ def inline(call):
               bot.send_message(chats, 'Аноним присоединился!')
               if len(info.lobby.game[chats]['players'])>1:
                 bot.send_message(chats, 'Поехали')
-                begin(id)
+                begin(chats)
             else:
                 pass
 
