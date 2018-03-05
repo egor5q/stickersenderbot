@@ -23,16 +23,22 @@ def inline(call):
               if len(info.lobby.game[chats]['players'])>1:
                 bot.send_message(chats, 'Поехали')
                 begin(chats)
-                t=threading.Timer(300, deleter, args=[chats])
+                t=threading.Timer(300, del2, args=[chats])
                 t.start()
                                   
             else:
                 pass
 
-
+def del2(id):
+    try:
+      bot.send_message(id, '5 минут прошло! Вирт остановлен!')
+      del info.lobby.game[id]
+    except:
+      pass
+            
+            
 def deleter(id):
   try:
-    bot.send_message(id, '5 минут прошло! Вирт остановлен!')
     del info.lobby.game[id]
   except:
     pass
