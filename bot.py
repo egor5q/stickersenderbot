@@ -29,6 +29,7 @@ def inline(call):
 
 def deleter(id):
     del info.lobby.game[id]
+    
 @bot.message_handler(commands=['stop'])
 def s(m):
   for ids in info.lobby.game:
@@ -51,6 +52,7 @@ def namechoice(id):
     x=random.choice(randlist)
     while x in info.lobby.game[id]['nicks']:
         x=random.choice(randlist)
+    return x
         
         
 def begin(id):
