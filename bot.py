@@ -34,7 +34,7 @@ def m(m):
     if m.chat.id not in info.lobby.game:
         Keyboard=types.InlineKeyboardMarkup()
         info.lobby.game.update(createroom(m.chat.id))
-        Keyboard.add(types.InlineKeyboardButton(text='Тык', call.data='join'))
+        Keyboard.add(types.InlineKeyboardButton(text='Тык', callback_data='join'))
         msg=bot.send_message(m.chat.id, 'Начинаем! жмите на кнопку, чтобы присоединиться', reply_markup=Keyboard)
     else:
         pass
