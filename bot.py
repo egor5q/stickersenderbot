@@ -16,7 +16,14 @@ bot = telebot.TeleBot(token)
 def inline(call):
     if call.data=='join':
         if call.from_user.id not in info.lobby.game[call.chat.id]['players']:
-            info.lobby.game[call.chat.id]['players']
+            if len(info.lobby.game[call.chat.id]['players'])<2:
+              info.lobby.game[call.chat.id]['players'].update(createuser(call.from_user.id))
+              bot.send_message(call.chat.id, 'Аноним присоединился!')
+              if len(info.lobby.game[call.chat.id]['players'])>1:
+                bot.send_message(call.chat.id, 'Поехали')
+                begin(id)
+            else:
+                pass
 
 
 
@@ -33,17 +40,34 @@ def m(m):
         pass
 
 
+def begin(id):
+    for id in info.lobby.game[id]['players']:
+        bot.send_message(id, 'Пишите сюда что то')
+    
+    
+@bot.message_handler(content_types=['text'])
+def h(m):
+    for ids in info.lobby.game:
+        if m.from_user.id in info.lobby.game[ids]['players']:
+            bot.send_message(ids, 'Аноним:'
 
-def createroom(id)
+    
+def createroom(id):
 return{id:{
     'players':{
-    'player1':None,
-    'player2':None
     }
-}
-    
+     }
+      }   
         
-        
+def createuser(id):
+    return{id:{
+           'name':'Аноним'
+          }
+          }
+       
+       
+       
+       
 if __name__ == '__main__':
   bot.polling(none_stop=True)
 
