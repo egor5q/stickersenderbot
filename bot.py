@@ -11,7 +11,7 @@ from telebot import types
 from emoji import emojize
 token = os.environ['TELEGRAM_TOKEN']
 bot = telebot.TeleBot(token)
-randlist=['Залупич', 'Равен', 'Котейка', 'Артем', 'Резко Пахнущая Пизда', 'Писюк', 'Веган', 'Пйос', 'Недотраханный Чечен', 'Большой Банан']
+randlist=['Шальная Императрица', 'Равен', 'Котейка', 'Артем', 'Возбужденный Самец', 'Писюк', 'Веган', 'Пйос', 'Большой Банан']
 @bot.callback_query_handler(func=lambda call:True)
 def inline(call):
     if call.data=='join':
