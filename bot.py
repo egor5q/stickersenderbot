@@ -58,7 +58,7 @@ def h(m):
     for ids in info.lobby.game:
         if m.from_user.id in info.lobby.game[ids]['players']:
           try:
-            bot.send_message(ids, info.lobby.game[ids]['players'][m.from_user.id]['name']+'\n'+m.text)
+            bot.send_message(ids, info.lobby.game[ids]['players'][m.from_user.id]['name']+':\n'+m.text)
           except:
             bot.send_message(ids, 'Какой то пидорас не открыл диалог с ботом!')
 
