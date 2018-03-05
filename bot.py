@@ -28,7 +28,11 @@ def inline(call):
 
 
 
-
+@bot.message_handler(commands=['stop'])
+def s(m):
+  for ids in info.lobby.game:
+    if m.from_user.id in info.lobby.game['players']:
+        bot.send_message(ids, 'Аноним остановил диалог!')
 
 @bot.message_handler(commands=['lobby'])
 def m(m):
