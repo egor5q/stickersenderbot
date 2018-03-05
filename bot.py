@@ -11,7 +11,7 @@ from telebot import types
 from emoji import emojize
 token = os.environ['TELEGRAM_TOKEN']
 bot = telebot.TeleBot(token)
-
+randlist=['Залупич', 'Равен', 'Котейка', 'Артем']
 @bot.callback_query_handler(func=lambda call:True)
 def inline(call):
     if call.data=='join':
@@ -58,7 +58,7 @@ def h(m):
     for ids in info.lobby.game:
         if m.from_user.id in info.lobby.game[ids]['players']:
           try:
-            bot.send_message(ids, 'Аноним:\n'+m.text)
+            bot.send_message(ids, info.lobby.game[ids]['players'][m.from_user.id]['name']+'\n'+m.text)
           except:
             bot.send_message(ids, 'Какой то пидорас не открыл диалог с ботом!')
 
@@ -72,7 +72,7 @@ def createroom(id):
         
 def createuser(id):
     return{id:{
-           'name':'Аноним'
+           'name':random.choice(randlist)
           }
           }
        
