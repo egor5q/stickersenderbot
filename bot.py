@@ -18,14 +18,13 @@ def inline(call):
       z=0
       for chats in info.lobby.game:
         if call.from_user.id in info.lobby.game[chats]['players']:
-            z+=1
-      for chats in info.lobby.game:    
-       if z==0:
-        if call.from_user.id not in info.lobby.game[chats]['players']:
-            if len(info.lobby.game[chats]['players'])<8:
-              info.lobby.game[chats]['players'].update(createuser(call.from_user.id, chats))
-              bot.send_message(chats, 'Аноним присоединился!')
-              if len(info.lobby.game[chats]['players'])>7:
+            z+=1   
+            if z==0:
+             if call.from_user.id not in info.lobby.game[chats]['players']:
+               if len(info.lobby.game[chats]['players'])<8:
+                  info.lobby.game[chats]['players'].update(createuser(call.from_user.id, chats))
+                  bot.send_message(chats, 'Аноним присоединился!')
+               if len(info.lobby.game[chats]['players'])>7:
                 bot.send_message(chats, 'Набор окончен!')
                 begin(chats)
                 t=threading.Timer(1200, del2, args=[chats])
