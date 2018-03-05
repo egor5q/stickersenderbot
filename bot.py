@@ -90,7 +90,7 @@ def h(m):
 def createroom(id):
   return{id:{
       'nicks':[],
-      'alreadyplay':[]
+      'alreadyplay':[],
     'players':{
     }
      }
