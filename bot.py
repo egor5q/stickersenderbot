@@ -56,7 +56,7 @@ def s(m):
   for ids in info.lobby.game:
     if m.from_user.id in info.lobby.game[ids]['players']:
         bot.send_message(ids, 'Аноним вышел!')
-        t=threading.Timer(5, delplayer, args=[ids])
+        t=threading.Timer(0.1, delplayer, args=[ids])
         t.start()
 
 @bot.message_handler(commands=['lobby'])
