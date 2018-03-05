@@ -42,7 +42,7 @@ def m(m):
 
 
 def begin(id):
-    for id in info.lobby.game[id]['players']:
+    for ids in info.lobby.game[id]['players']:
         bot.send_message(id, 'Пишите сюда что то')
     
     
