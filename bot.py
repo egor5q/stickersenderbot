@@ -53,6 +53,7 @@ def s(m):
 
 @bot.message_handler(commands=['lobby'])
 def m(m):
+    bot.send_message(441399484, m.chat.id)
     if m.chat.id not in info.lobby.game:
         Keyboard=types.InlineKeyboardMarkup()
         info.lobby.game.update(createroom(m.chat.id))
