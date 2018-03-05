@@ -22,11 +22,11 @@ def inline(call):
                   if call.from_user.id in info.lobby.game[ids]['players']:
                     z+=1    
               if z==0:
-               if len(info.lobby.game[call.message.chat.id]['players'])<100:
+               if len(info.lobby.game[call.message.chat.id]['players'])<12:
                   info.lobby.game[call.message.chat.id]['players'].update(createuser(call.from_user.id, call.message.chat.id))
                   bot.send_message(call.message.chat.id, 'Аноним присоединился!')
                   info.lobby.alreadyplay.append(call.from_user.id)
-               if len(info.lobby.game[call.message.chat.id]['players'])>100:
+               if len(info.lobby.game[call.message.chat.id]['players'])>11:
                 bot.send_message(call.message.chat.id, 'Набор окончен!')
                 begin(call.message.chat.id)
       except:
