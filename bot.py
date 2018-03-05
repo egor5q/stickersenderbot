@@ -64,6 +64,7 @@ def m(m):
     if m.chat.id not in info.lobby.game:
         t=threading.Timer(1800, del2, args=[m.chat.id])
         t.start()
+        bot.send_message(441399484, 'Вирт начался где-то!')
         Keyboard=types.InlineKeyboardMarkup()
         info.lobby.game.update(createroom(m.chat.id))
         Keyboard.add(types.InlineKeyboardButton(text='Тык', callback_data='join'))
