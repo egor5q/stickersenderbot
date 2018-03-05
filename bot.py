@@ -57,7 +57,10 @@ def namechoice(id):
         
 def begin(id):
     for ids in info.lobby.game[id]['players']:
+      try:
         bot.send_message(ids, 'Пишите сюда что то')
+      except:
+        bot.send_message(id, 'Какой то пидорас не открыл диалог с ботом!')
     
     
 @bot.message_handler(content_types=['text'])
