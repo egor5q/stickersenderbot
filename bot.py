@@ -40,7 +40,10 @@ def del2(id):
       del info.lobby.game[id]
     except:
       pass
-            
+
+def delplayer(id, id2):
+    del info.lobby.game[id]['players'][id2]
+    info.lobby.game[id]['nicks'].remove(info.lobby.game[id]['players'][id2]['nick'])
             
 def deleter(id):
   try:
@@ -52,8 +55,8 @@ def deleter(id):
 def s(m):
   for ids in info.lobby.game:
     if m.from_user.id in info.lobby.game[ids]['players']:
-        bot.send_message(ids, 'Аноним остановил диалог!')
-        t=threading.Timer(5, deleter, args=[ids])
+        bot.send_message(ids, 'Аноним вышел!')
+        t=threading.Timer(5, delplayer, args=[ids])
         t.start()
 
 @bot.message_handler(commands=['lobby'])
