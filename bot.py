@@ -22,11 +22,11 @@ def inline(call):
                   if call.from_user.id in info.lobby.game[ids]['players']:
                     z+=1    
               if z==0:
-               if len(info.lobby.game[call.message.chat.id]['players'])<8:
+               if len(info.lobby.game[call.message.chat.id]['players'])<100:
                   info.lobby.game[call.message.chat.id]['players'].update(createuser(call.from_user.id, call.message.chat.id))
                   bot.send_message(call.message.chat.id, 'Аноним присоединился!')
                   info.lobby.alreadyplay.append(call.from_user.id)
-               if len(info.lobby.game[call.message.chat.id]['players'])>7:
+               if len(info.lobby.game[call.message.chat.id]['players'])>100:
                 bot.send_message(call.message.chat.id, 'Набор окончен!')
                 begin(call.message.chat.id)
       except:
@@ -36,7 +36,7 @@ def inline(call):
 
 def del2(id):
     try:
-      bot.send_message(id, '20 минут прошло! Вирт остановлен!')
+      bot.send_message(id, '30 минут прошло! Вирт остановлен!')
       del info.lobby.game[id]
     except:
       pass
@@ -59,7 +59,7 @@ def s(m):
 @bot.message_handler(commands=['lobby'])
 def m(m):
     if m.chat.id not in info.lobby.game:
-        t=threading.Timer(1200, del2, args=[m.chat.id])
+        t=threading.Timer(1800, del2, args=[m.chat.id])
         t.start()
         Keyboard=types.InlineKeyboardMarkup()
         info.lobby.game.update(createroom(m.chat.id))
