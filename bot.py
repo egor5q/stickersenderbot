@@ -53,7 +53,7 @@ def s(m):
   for ids in info.lobby.game:
     if m.from_user.id in info.lobby.game[ids]['players']:
         bot.send_message(ids, 'Аноним остановил диалог!')
-        t=threading.Timer(2, deleter, args=[ids])
+        t=threading.Timer(5, deleter, args=[ids])
         t.start()
 
 @bot.message_handler(commands=['lobby'])
