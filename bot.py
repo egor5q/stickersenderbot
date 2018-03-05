@@ -31,8 +31,11 @@ def inline(call):
 
 
 def deleter(id):
+  try:
     bot.send_message(id, '5 минут прошло! Вирт остановлен!')
     del info.lobby.game[id]
+  except:
+    pass
     
 @bot.message_handler(commands=['stop'])
 def s(m):
