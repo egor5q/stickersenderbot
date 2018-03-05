@@ -19,7 +19,7 @@ def inline(call):
       for chats in info.lobby.game:
         if call.from_user.id in info.lobby.game[chats]['players']:
             z+=1   
-            if z==0:
+        if z==0:
              if call.from_user.id not in info.lobby.game[chats]['players']:
                if len(info.lobby.game[chats]['players'])<8:
                   info.lobby.game[chats]['players'].update(createuser(call.from_user.id, chats))
@@ -30,7 +30,7 @@ def inline(call):
                 t=threading.Timer(1200, del2, args=[chats])
                 t.start()
                                   
-            else:
+        else:
                 pass
 
 def del2(id):
