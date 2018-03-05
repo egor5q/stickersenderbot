@@ -66,11 +66,11 @@ def m(m):
         t.start()
         bot.send_message(441399484, 'Вирт начался где-то!')
         Keyboard=types.InlineKeyboardMarkup()
-        info.lobby.game.update(createroom(m.chat.id))
+        info.lobby.game.update(createroom(m.chat.id))       
         Keyboard.add(types.InlineKeyboardButton(text='Тык', callback_data='join'))
-        msg=bot.send_message(m.chat.id, 'Начинаем! жмите на кнопку, чтобы присоединиться', reply_markup=Keyboard)
+        info.lobby.game[m.chat.id]['startm']=bot.send_message(m.chat.id, 'Начинаем! жмите на кнопку, чтобы присоединиться', reply_markup=Keyboard)
     else:
-        pass
+        bot.reply_to(info.lobby.game[m.chat.id]['startm'], 'Вирт уже идёт!')
 
 def namechoice(id):
     x=random.choice(randlist)
