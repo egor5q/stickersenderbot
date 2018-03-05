@@ -17,13 +17,13 @@ def inline(call):
     if call.data=='join':
       for chats in info.lobby.game:
         if call.from_user.id not in info.lobby.game[chats]['players']:
-            if len(info.lobby.game[chats]['players'])<2:
+            if len(info.lobby.game[chats]['players'])<8:
               info.lobby.game[chats]['players'].update(createuser(call.from_user.id, chats))
               bot.send_message(chats, 'Аноним присоединился!')
-              if len(info.lobby.game[chats]['players'])>1:
-                bot.send_message(chats, 'Поехали')
+              if len(info.lobby.game[chats]['players'])>7:
+                bot.send_message(chats, 'Набор окончен!')
                 begin(chats)
-                t=threading.Timer(300, del2, args=[chats])
+                t=threading.Timer(1200, del2, args=[chats])
                 t.start()
                                   
             else:
@@ -31,7 +31,7 @@ def inline(call):
 
 def del2(id):
     try:
-      bot.send_message(id, '5 минут прошло! Вирт остановлен!')
+      bot.send_message(id, '20 минут прошло! Вирт остановлен!')
       del info.lobby.game[id]
     except:
       pass
