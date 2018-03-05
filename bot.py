@@ -11,7 +11,7 @@ from telebot import types
 from emoji import emojize
 token = os.environ['TELEGRAM_TOKEN']
 bot = telebot.TeleBot(token)
-randlist=['Шальная Императрица', 'Равен', 'Котейка', 'Артем', 'Возбужденный Самец', 'Писюк', 'Веган', 'Пйос', 'Большой Банан']
+randlist=['Шальная Императрица', 'Равен', 'Котейка', 'Артем', 'Возбужденный Самец', 'Писюк', 'Веган', 'Пйос', 'Большой Банан', 'Мявс', 'Клубничка']
 @bot.callback_query_handler(func=lambda call:True)
 def inline(call):
     if call.data=='join':
@@ -24,8 +24,6 @@ def inline(call):
                if len(info.lobby.game[chats]['players'])>7:
                 bot.send_message(chats, 'Набор окончен!')
                 begin(chats)
-                t=threading.Timer(1200, del2, args=[chats])
-                t.start()
                                   
 
 
@@ -56,6 +54,8 @@ def m(m):
     bot.send_message(441399484, m.chat.id)
     if m.chat.id not in info.lobby.game:
       if m.chat.id==-1001117073605:
+        t=threading.Timer(1200, del2, args=[chats])
+        t.start()
         Keyboard=types.InlineKeyboardMarkup()
         info.lobby.game.update(createroom(m.chat.id))
         Keyboard.add(types.InlineKeyboardButton(text='Тык', callback_data='join'))
