@@ -15,15 +15,14 @@ randlist=['Шальная Императрица', 'Равен', 'Котейка
 @bot.callback_query_handler(func=lambda call:True)
 def inline(call):
     if call.data=='join':
-      for chats in info.lobby.game:
-        if call.from_user.id not in info.lobby.alreadyplay:
-               if len(info.lobby.game[chats]['players'])<8:
-                  info.lobby.game[chats]['players'].update(createuser(call.from_user.id, chats))
-                  bot.send_message(chats, 'Аноним присоединился!')
+        if call.from_user.id not in info.lobby.game[call.message.chat.id]['players']:
+               if len(info.lobby.game[call.message.chat.id]['players'])<8:
+                  info.lobby.game[call.message.chat.id]['players'].update(createuser(call.from_user.id, call.message.chat.id))
+                  bot.send_message(call.message.chat.id, 'Аноним присоединился!')
                   info.lobby.alreadyplay.append(call.from_user.id)
-               if len(info.lobby.game[chats]['players'])>7:
-                bot.send_message(chats, 'Набор окончен!')
-                begin(chats)
+               if len(info.lobby.game[call.message.chat.id]['players'])>7:
+                bot.send_message(call.message.chat.id, 'Набор окончен!')
+                begin(call.message.chat.id)
                                   
 
 
