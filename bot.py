@@ -32,7 +32,7 @@ def inline(call):
 @bot.message_handler(commands=['lobby'])
 def m(m):
     if m.chat.id not in info.lobby.game:
-        Keyboard=Types.InlineKeyboardMarkup()
+        Keyboard=types.InlineKeyboardMarkup()
         info.lobby.game.update(createroom(m.chat.id))
         Keyboard.add('Тык', callback_data='join')
         msg=bot.send_message(m.chat.id, 'Начинаем! жмите на кнопку, чтобы присоединиться', reply_markup=Keyboard)
