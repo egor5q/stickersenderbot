@@ -19,7 +19,7 @@ def inline(call):
         if call.from_user.id not in info.lobby.game[chats]['players']:
             if len(info.lobby.game[chats]['players'])<2:
               info.lobby.game[chats]['players'].update(createuser(call.from_user.id))
-              bot.send_message(call.chat.id, 'Аноним присоединился!')
+              bot.send_message(chats, 'Аноним присоединился!')
               if len(info.lobby.game[chats]['players'])>1:
                 bot.send_message(chats, 'Поехали')
                 begin(id)
