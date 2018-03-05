@@ -14,8 +14,14 @@ bot = telebot.TeleBot(token)
 randlist=['Шальная Императрица', 'Равен', 'Котейка', 'Артем', 'Возбужденный Самец', 'Писюк', 'Веган', 'Пйос', 'Большой Банан', 'Мявс', 'Клубничка']
 @bot.callback_query_handler(func=lambda call:True)
 def inline(call):
-    if call.data=='join':
+    if call.data=='join':        
+      try:
         if call.from_user.id not in info.lobby.game[call.message.chat.id]['players']:
+              z=0
+              for ids in info.lobby.game:
+                  if call.from_user.id in info.lobby.game[ids]['players']:
+                    z+=1    
+              if z==0:
                if len(info.lobby.game[call.message.chat.id]['players'])<8:
                   info.lobby.game[call.message.chat.id]['players'].update(createuser(call.from_user.id, call.message.chat.id))
                   bot.send_message(call.message.chat.id, 'Аноним присоединился!')
@@ -23,6 +29,8 @@ def inline(call):
                if len(info.lobby.game[call.message.chat.id]['players'])>7:
                 bot.send_message(call.message.chat.id, 'Набор окончен!')
                 begin(call.message.chat.id)
+      except:
+        pass
                                   
 
 
