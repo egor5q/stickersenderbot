@@ -65,6 +65,7 @@ def namechoice(id):
     x=random.choice(randlist)
     while x in info.lobby.game[id]['nicks']:
         x=random.choice(randlist)
+    info.lobby.game[id]['nicks'].append(x)
     return x
         
         
