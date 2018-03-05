@@ -16,23 +16,18 @@ randlist=['Шальная Императрица', 'Равен', 'Котейка
 def inline(call):
     if call.data=='join':
       for chats in info.lobby.game:
-        z=0
-        for chat2 in info.lobby.game:
-          if call.from_user.id in info.lobby.game[chat2]['players']:
-            z+=1   
-        if z==0:
-             if call.from_user.id not in info.lobby.game[chats]['players']:
+        if call.from_user.id not in info.lobby.game['alreadyplay']:
                if len(info.lobby.game[chats]['players'])<8:
                   info.lobby.game[chats]['players'].update(createuser(call.from_user.id, chats))
                   bot.send_message(chats, 'Аноним присоединился!')
+                  info.lobby.game['alreadyplay'].append(call.from_user.id)
                if len(info.lobby.game[chats]['players'])>7:
                 bot.send_message(chats, 'Набор окончен!')
                 begin(chats)
                 t=threading.Timer(1200, del2, args=[chats])
                 t.start()
                                   
-        else:
-                pass
+
 
 def del2(id):
     try:
@@ -95,6 +90,7 @@ def h(m):
 def createroom(id):
   return{id:{
       'nicks':[],
+      'alreadyplay':[]
     'players':{
     }
      }
