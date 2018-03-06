@@ -97,6 +97,9 @@ def h(m):
               bot.send_message(ids, info.lobby.game[ids]['players'][m.from_user.id]['name']+':\n'+m.text)
             except:
                 pass
+            try:
+                for idd in info.lobby.game[ids]['players']:
+                    bot.send_message(idd, info.lobby.game[ids]['players'][m.from_user.id]['name']+':\n'+m.text)
             
 
     
