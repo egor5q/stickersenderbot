@@ -71,7 +71,10 @@ def m(m):
         Keyboard.add(types.InlineKeyboardButton(text='Тык', callback_data='join'))
         info.lobby.game[m.chat.id]['startm']=bot.send_message(m.chat.id, 'Начинаем! жмите на кнопку, чтобы присоединиться', reply_markup=Keyboard)
     else:
+      try:
         bot.reply_to(info.lobby.game[m.chat.id]['startm'], 'Вирт уже идёт!')
+      except:
+        pass
 
 def namechoice(id):
     x=random.choice(randlist)
@@ -113,6 +116,7 @@ def h(m):
 def createroom(id):
   return{id:{
       'nicks':[],
+      'startm':None,
       'timer':None,
     'players':{
     }
