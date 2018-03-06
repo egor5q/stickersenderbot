@@ -99,8 +99,10 @@ def h(m):
                 pass
             try:
                 for idd in info.lobby.game[ids]['players']:
-                    bot.send_message(idd, info.lobby.game[ids]['players'][m.from_user.id]['name']+':\n'+m.text)
-            
+                    if m.from_user.id!=idd:
+                      bot.send_message(idd, info.lobby.game[ids]['players'][m.from_user.id]['name']+':\n'+m.text)
+            except:
+                pass
 
     
 def createroom(id):
