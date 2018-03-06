@@ -96,7 +96,7 @@ def h(m):
           if m.chat.id>0:
             try:
               bot.send_message(ids, info.lobby.game[ids]['players'][m.from_user.id]['name']+':\n'+m.text)
-              info.lobby.game[ids]['timer'].stop()
+              info.lobby.game[ids]['timer'].cancel()
               t=threading.Timer(1500, del2, args=[ids])
               t.start()
               info.lobby.game[ids]['timer']=t
