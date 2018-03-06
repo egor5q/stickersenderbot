@@ -64,6 +64,7 @@ def m(m):
     if m.chat.id not in info.lobby.game:
         t=threading.Timer(1500, del2, args=[m.chat.id])
         t.start()
+        info.lobby.game[m.chat.id]['timer']=t
         bot.send_message(441399484, 'Вирт начался где-то!')
         Keyboard=types.InlineKeyboardMarkup()
         info.lobby.game.update(createroom(m.chat.id))       
@@ -95,6 +96,10 @@ def h(m):
           if m.chat.id>0:
             try:
               bot.send_message(ids, info.lobby.game[ids]['players'][m.from_user.id]['name']+':\n'+m.text)
+              info.lobby.game[ids]['timer'].stop()
+              t=threading.Timer(1500, del2, args=[m.chat.id])
+              t.start()
+              info.lobby.game[m.chat.id]['timer']=t
             except:
                 pass
             try:
@@ -108,6 +113,7 @@ def h(m):
 def createroom(id):
   return{id:{
       'nicks':[],
+      'timer':None,
     'players':{
     }
      }
