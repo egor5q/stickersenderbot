@@ -98,7 +98,8 @@ def textm(m):
                 else:
                   alr=0    
      else:
-        bot.send_message(m.chat.id, 'Английская раскладка! Идите нахуй.')
+        if len(m.text)<15:
+          bot.send_message(m.chat.id, 'Английская раскладка! Идите нахуй.')
     elif 'p' in p and 'a' in p and 's' in p and 'u' in p and 'k' in p and 'i' in p and 'd' in p and 'r' in p:
         for x in p:
                 if x not in spisok2:
