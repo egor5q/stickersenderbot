@@ -33,6 +33,7 @@ def textm(m):
     global alr
     p=m.text.lower()
     if 'или' in p:
+        n=0
         ili=0
         while n<len(p):
             if p[n]=='и' and p[n+1]=='л' and p[n+2]=='и':
