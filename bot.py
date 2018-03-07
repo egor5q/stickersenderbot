@@ -49,13 +49,14 @@ def textm(m):
         pisuks=1
         print('3')
     if 'п' in p and 'с' in p and 'ю' in p and 'к' in p and 'д' in p and 'р' in p and len(p)<250:
+      if pisuks==1:
         for x in p:
           if x not in spisok2:
              spisok2.append(x)
         if len(spisok2)<15:           
           print('4')
-          pisuks=0
           bot.send_message(m.chat.id, 'Нахуй иди')
+          pisuks=0
         spisok2.clear()
     elif 'вирт' in p:
         bot.send_message(m.chat.id, 'Я тоже хочу повиртить!')
