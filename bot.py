@@ -47,8 +47,8 @@ def textm(m):
         dd=0
         g=0
         
-        
-        while g< len(a):
+        try:
+         while g< len(a):
           j=len(a[g])
           if g<len(a) and g>0:       
             if a[g][0]==' ' and a[g][j-1]==' ':
@@ -60,6 +60,8 @@ def textm(m):
             if a[g][0]==' ':
                 dd=1
           g+=1
+        except:
+            pass
         
             
         print (a)        
