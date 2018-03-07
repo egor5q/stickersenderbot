@@ -41,7 +41,7 @@ def textm(m):
     x=m.text.lower()
     if 'п' in p and 'c' in p and 'ю' in p and 'к':
         pisuks=1
-    if 'п' in p and 'c' in p and 'ю' in p and 'к' in p and 'п' in p and 'д' in p and 'р' in p:
+    if 'п' in p and 'c' in p and 'ю' in p and 'к' in p and 'д' in p and 'р' in p:
         pisuks=0
         bot.send_message(m.chat.id, 'Нахуй иди')
     elif 'вирт' in x:
