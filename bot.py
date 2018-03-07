@@ -32,6 +32,9 @@ def textm(m):
     global pisuks
     global alr
     p=m.text.lower()
+    if 'или' in p:
+        a=p.split('и')
+        print (a)
     if pisuks==1:
         print('1')
         if 'п' in p and 'и' in p and 'д' in p and 'р' in p and len(p)<250:
