@@ -59,6 +59,7 @@ def textm(m):
           elif g==len(a)-1:
             if a[g][0]==' ':
                 dd=1
+          g+=1
         
             
         print (a)        
