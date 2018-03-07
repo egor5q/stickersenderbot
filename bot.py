@@ -34,9 +34,10 @@ def textm(m):
     p=m.text.lower()
     if 'или' in p:
         ili=0
-        for n in p:
+        while n<len(p):
             if p[n]=='и' and p[n+1]=='л' and p[n+2]=='и':
               ili+=1
+            n+=1
         print(str(ili))
         a=p.split('или')
         print (a)
