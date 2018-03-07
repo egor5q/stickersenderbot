@@ -44,24 +44,38 @@ def textm(m):
             n+=1
         print(str(ili))
         a=p.split('или')
-        print (a)
+        dd=0
+        g=0
+        j=len(a)
+        while g< len(a):
+          if g<len(a) and g>0:       
+            if g[0]==' ' and g[j-1]==' ':
+                dd=1
+          elif g==0:
+            if g[j-1]==' ':
+                dd=1
+          elif g==len(a)-1:
+            if g[0]==' ':
+                dd=1
+        print (a)        
         if ili>0:
-         try:
-          rd=random.randint(0,ili)
-          count=0
-          slovar=a[rd]
-          for i in slovar:
+         if dd==1:
+          try:
+            rd=random.randint(0,ili)
+            count=0
+            slovar=a[rd]
+            for i in slovar:
                 count+=1
-          if slovar[count-1]=='?':
-            slovar=slovar[:(count-1)]
+            if slovar[count-1]=='?':
+              slovar=slovar[:(count-1)]
+              print(slovar)
+            if slovar[0]=='я' or slovar[0]=='Я':
+              slovar=slovar[1:]
+              print(slovar)
+            slovar=slovar.capitalize()
             print(slovar)
-          if slovar[0]=='я' or slovar[0]=='Я':
-            slovar=slovar[1:]
-            print(slovar)
-          slovar=slovar.capitalize()
-          print(slovar)
-          bot.send_message(m.chat.id, slovar)
-         except:
+            bot.send_message(m.chat.id, slovar)
+          except:
             pass
     if 'пасюк пидр' in p or 'писюк пидр' in p or 'пасюк пидор' in p or 'писюк пидр' in p:
         bot.send_message(m.chat.id, 'Нахуй иди')
