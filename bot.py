@@ -47,9 +47,9 @@ def textm(m):
         print('4')
         pisuks=0
         bot.send_message(m.chat.id, 'Нахуй иди')
-    elif 'вирт' in x:
+    elif 'вирт' in p:
         bot.send_message(m.chat.id, 'Я тоже хочу повиртить!')
-    elif 'хуй' in x:
+    elif 'хуй' in p:
         bot.send_message(m.chat.id, 'ВЫ СКАЗАЛИ "ХУЙ"!')
         
         
