@@ -11,7 +11,7 @@ from telebot import types
 from emoji import emojize
 token = os.environ['TELEGRAM_TOKEN']
 bot = telebot.TeleBot(token)
-pisuk=0
+pisuks=0
 spisok=['Пиздец', 'Бляяяяяя', 'Дороу', 'Кто будет сосать?']
 
 @bot.message_handler(commands=['chlen'])
@@ -23,13 +23,13 @@ def sasat(m):
     bot.send_message(m.chat.id, 'О, вы выбрали пункт "сасат"! Вы сасали '+str(random.randint(1, 1000))+' членов!')
 
 def pisuk():
-    public pisuk
-    pisuk=0
+    public pisuks
+    pisuks=0
           
 @bot.message_handler(content_types=['text'])
 def textm(m):
-    public pisuk
-    if pisuk==1:
+    public pisuks
+    if pisuks==1:
         if 'пид' in m.text.lower():
           bot.send_message(m.chat.id, 'Нахуй иди')
     z=random.randint(1, 100)
