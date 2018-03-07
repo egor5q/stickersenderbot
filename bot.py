@@ -71,8 +71,9 @@ def textm(m):
                     spisok2.append(x)
             if len(spisok2)<20:                
               print('2')
-              bot.send_message(m.chat.id, 'Нахуй иди')
-              pisuks=0
+              if alr==0:
+                bot.send_message(m.chat.id, 'Нахуй иди')
+                pisuks=0
               alr=1
             spisok2.clear()
     z=random.randint(1, 100)
