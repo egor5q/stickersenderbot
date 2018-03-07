@@ -70,10 +70,6 @@ def textm(m):
     if 'p' in p and 'a' in p and 's' in p and 'u' in p and 'k' in p and 'i' in p and 'd' in p and 'r' in p:
       bot.send_message(m.chat.id, 'nahui idi')
     spisok2.clear()
-    elif 'вирт' in p:
-        bot.send_message(m.chat.id, 'Я тоже хочу повиртить!')
-    elif 'хуй' in p:
-        bot.send_message(m.chat.id, 'ВЫ СКАЗАЛИ "ХУЙ"!')
         
         
         
