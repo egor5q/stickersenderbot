@@ -60,12 +60,11 @@ def textm(m):
                 if x not in spisok2:
                  spisok2.append(x)
               if len(spisok2)<20:           
-            print('4')
-            if alr==0:
-              bot.send_message(m.chat.id, 'Нахуй иди')
-              pisuks=0
-            else:
-              alr=0    
+                if alr==0:
+                  bot.send_message(m.chat.id, 'Нахуй иди')
+                  pisuks=0
+                else:
+                  alr=0    
      else:
         bot.send_message(m.chat.id, 'Английская раскладка! Идите нахуй.')
     if 'p' in p and 'a' in p and 's' in p and 'u' in p and 'k' in p and 'i' in p and 'd' in p and 'r' in p:
