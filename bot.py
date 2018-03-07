@@ -56,7 +56,7 @@ def textm(m):
             slovar=slovar[:(count-1)]
             print(slovar)
           if slovar[0]=='я' or slovar[0]=='Я':
-            slovar=slovar[(count-1):]
+            slovar=slovar[1:]
             print(slovar)
           slovar=slovar.capitalize()
           print(slovar)
