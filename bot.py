@@ -13,7 +13,7 @@ token = os.environ['TELEGRAM_TOKEN']
 bot = telebot.TeleBot(token)
 pisuks=0
 alr=0
-spisok=['Пиздец', 'Бляяяяяя', 'Дороу', 'Кто будет сосать?']
+spisok=['Ппц', 'Мда.', 'Дороу']
 spisok2=[]
 @bot.message_handler(commands=['chlen'])
 def c(m):
@@ -69,7 +69,7 @@ def textm(m):
             for x in p:
                 if x not in spisok2:
                     spisok2.append(x)
-            if len(spisok2)<20:                
+            if len(spisok2)<14:                
               print('2')
               if alr==0:
                 bot.send_message(m.chat.id, 'Нахуй иди')
@@ -91,7 +91,7 @@ def textm(m):
               for x in p:
                 if x not in spisok2:
                  spisok2.append(x)
-              if len(spisok2)<20:           
+              if len(spisok2)<14:           
                 if alr==0:
                   bot.send_message(m.chat.id, 'Нахуй иди')
                   pisuks=0
@@ -103,7 +103,7 @@ def textm(m):
         for x in p:
                 if x not in spisok2:
                  spisok2.append(x)
-        if len(spisok2)<20: 
+        if len(spisok2)<14: 
           bot.send_message(m.chat.id, 'nahui idi')
     spisok2.clear()
         
