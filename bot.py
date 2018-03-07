@@ -55,6 +55,9 @@ def textm(m):
           if slovar[count-1]=='?':
             slovar=slovar[:(count-1)]
             print(slovar)
+          if slovar[0]=='я' or slovar[0]=='Я':
+            slovar=slovar[(count-1):]
+          slovar=slovar.capitalize()
           bot.send_message(m.chat.id, slovar)
          except:
             pass
