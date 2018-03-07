@@ -25,7 +25,9 @@ def sasat(m):
 @bot.message_handler(content_types=['text'])
 def textm(m):
     x=m.text.lower()
-    if 'хуй' in x:
+    if 'вирт' in x:
+        bot.send_message(m.chat.id, 'Я тоже хочу повиртить!')
+    elif 'хуй' in x:
         bot.send_message(m.chat.id, 'ВЫ СКАЗАЛИ "ХУЙ"!')
         
         
