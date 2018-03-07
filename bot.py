@@ -51,7 +51,7 @@ def textm(m):
     if 'п' in p and 'с' in p and 'ю' in p and 'к' in p and len(p)<250:
         pisuks=1
         print('3')
-    if 'п' in p and 'ю' in p and 'к' in p and 'д' in p and len(p)<250:
+    if 'п' in p and 'и' in p and 'ю' in p and 'к' in p and 'д' in p and len(p)<250:
      if 'p' not in p:
       if 'р' in p:
        if 'c' not in p:
