@@ -100,7 +100,11 @@ def textm(m):
      else:
         bot.send_message(m.chat.id, 'Английская раскладка! Идите нахуй.')
     elif 'p' in p and 'a' in p and 's' in p and 'u' in p and 'k' in p and 'i' in p and 'd' in p and 'r' in p:
-      bot.send_message(m.chat.id, 'nahui idi')
+        for x in p:
+                if x not in spisok2:
+                 spisok2.append(x)
+        if len(spisok2)<20: 
+          bot.send_message(m.chat.id, 'nahui idi')
     spisok2.clear()
         
         
