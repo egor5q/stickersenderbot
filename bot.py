@@ -34,12 +34,13 @@ def textm(m):
     p=m.text.lower()
     if 'или' in p:
         ili=0
-        for 'или' in p:
-            ili+=1
+        for n in p:
+            if p[n]=='и' and p[n+1]=='л' and p[n+2]=='и':
+              ili+=1
         print(str(ili))
         a=p.split('или')
         print (a)
-        rd=random.randint(1,2)
+        rd=random.randint(1,ili)
         bot.send_message(m.chat.id, a[rd])
     if pisuks==1:
         print('1')
