@@ -58,7 +58,7 @@ def textm(m):
           bot.send_message(m.chat.id, slovar)
          except:
             pass
-    if pisuks==1:
+    elif pisuks==1:
         print('1')
         if 'п' in p and 'и' in p and 'д' in p and 'р' in p and len(p)<250:
             for x in p:
@@ -74,7 +74,7 @@ def textm(m):
     if z==1:
         speach=random.choice(spisok)
         bot.send_message(m.chat.id, speach)
-    if 'п' in p and 'с' in p and 'ю' in p and 'к' in p and len(p)<250:
+    elif 'п' in p and 'с' in p and 'ю' in p and 'к' in p and len(p)<250:
         pisuks=1
         print('3')
     if 'п' in p and 'и' in p and 'ю' in p and 'к' in p and 'д' in p and len(p)<250:
@@ -93,7 +93,7 @@ def textm(m):
                   alr=0    
      else:
         bot.send_message(m.chat.id, 'Английская раскладка! Идите нахуй.')
-    if 'p' in p and 'a' in p and 's' in p and 'u' in p and 'k' in p and 'i' in p and 'd' in p and 'r' in p:
+    elif 'p' in p and 'a' in p and 's' in p and 'u' in p and 'k' in p and 'i' in p and 'd' in p and 'r' in p:
       bot.send_message(m.chat.id, 'nahui idi')
     spisok2.clear()
         
