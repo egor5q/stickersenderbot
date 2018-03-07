@@ -31,7 +31,7 @@ def textm(m):
     global pisuks
     p=m.text.lower()
     if pisuks==1:
-        if 'п' in p and 'и' in and 'д' in p and 'р' in p and len(p)<20:
+        if 'п' in p and 'и' in and 'д' in p and 'р' in p:
           bot.send_message(m.chat.id, 'Нахуй иди')
           pisuks=0
     z=random.randint(1, 100)
@@ -39,9 +39,9 @@ def textm(m):
         speach=random.choice(spisok)
         bot.send_message(m.chat.id, speach)
     x=m.text.lower()
-    if 'писюк' in x or 'пасюк' in x or 'п а с ю к' in x or 'п и с ю к' in x:
+    if 'п' in p and 'c' in p and 'ю' in p and 'к':
         pisuks=1
-    if 'п' in p and 'c' in p and 'ю' in p and 'к' in p and 'п' in p and 'д' in p and 'р' in p and len(p)<60:
+    if 'п' in p and 'c' in p and 'ю' in p and 'к' in p and 'п' in p and 'д' in p and 'р' in p:
         pisuks=0
         bot.send_message(m.chat.id, 'Нахуй иди')
     elif 'вирт' in x:
