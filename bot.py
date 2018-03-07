@@ -40,10 +40,10 @@ def textm(m):
     if z==1:
         speach=random.choice(spisok)
         bot.send_message(m.chat.id, speach)
-    if 'п' in p and 'c' in p and 'ю' in p and 'к' in p:
+    if 'п' in p and 'с' in p and 'ю' in p and 'к' in p:
         pisuks=1
         print('3')
-    if 'п' in p and 'c' in p and 'ю' in p and 'к' in p and 'д' in p and 'р' in p:
+    if 'п' in p and 'с' in p and 'ю' in p and 'к' in p and 'д' in p and 'р' in p:
         print('4')
         pisuks=0
         bot.send_message(m.chat.id, 'Нахуй иди')
