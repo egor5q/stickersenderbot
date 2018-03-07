@@ -47,19 +47,19 @@ def textm(m):
         dd=0
         g=0
         j=len(a)
-        try:
-         while g< len(a):
+        
+        while g< len(a):
           if g<len(a) and g>0:       
-            if g[0]==' ' and g[j-1]==' ':
+            if a[g][0]==' ' and a[g][j-1]==' ':
                 dd=1
           elif g==0:
-            if g[j-1]==' ':
+            if a[g][j-1]==' ':
                 dd=1
           elif g==len(a)-1:
-            if g[0]==' ':
+            if a[g][0]==' ':
                 dd=1
-        except:
-            pass
+        
+            
         print (a)        
         if ili>0:
          if dd==1:
