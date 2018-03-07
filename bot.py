@@ -31,17 +31,20 @@ def textm(m):
     global pisuks
     p=m.text.lower()
     if pisuks==1:
+        print('1')
         if 'п' in p and 'и' in p and 'д' in p and 'р' in p:
+          print('2')
           bot.send_message(m.chat.id, 'Нахуй иди')
           pisuks=0
     z=random.randint(1, 100)
     if z==1:
         speach=random.choice(spisok)
         bot.send_message(m.chat.id, speach)
-    x=m.text.lower()
     if 'п' in p and 'c' in p and 'ю' in p and 'к':
         pisuks=1
+        print('3')
     if 'п' in p and 'c' in p and 'ю' in p and 'к' in p and 'д' in p and 'р' in p:
+        print('4')
         pisuks=0
         bot.send_message(m.chat.id, 'Нахуй иди')
     elif 'вирт' in x:
