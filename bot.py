@@ -29,8 +29,9 @@ def pisuk():
 @bot.message_handler(content_types=['text'])
 def textm(m):
     global pisuks
+    p=m.text.lower()
     if pisuks==1:
-        if 'пид' in m.text.lower() or 'п и д' in m.text.lower():
+        if 'п' in p and 'и' in and 'д' in p and 'р' in p and len(p)<20:
           bot.send_message(m.chat.id, 'Нахуй иди')
           pisuks=0
     z=random.randint(1, 100)
@@ -40,9 +41,8 @@ def textm(m):
     x=m.text.lower()
     if 'писюк' in x or 'пасюк' in x or 'п а с ю к' in x or 'п и с ю к' in x:
         pisuks=1
-    if 'писюк пид' in x or 'пасюк пид' in x or 'пасюк п и д' in x or 'писюк п и д' in x:
+    if 'п' in p and 'c' in p and 'ю' in p and 'к' in p and 'п' in p and 'д' in p and 'р' in p and len(p)<60:
         pisuks=0
-        t=threading.Timer(10, pisuk)
         bot.send_message(m.chat.id, 'Нахуй иди')
     elif 'вирт' in x:
         bot.send_message(m.chat.id, 'Я тоже хочу повиртить!')
