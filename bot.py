@@ -31,7 +31,7 @@ def textm(m):
     global pisuks
     p=m.text.lower()
     if pisuks==1:
-        if 'п' in p and 'и' in and 'д' in p and 'р' in p:
+        if 'п' in p and 'и' in p and 'д' in p and 'р' in p:
           bot.send_message(m.chat.id, 'Нахуй иди')
           pisuks=0
     z=random.randint(1, 100)
