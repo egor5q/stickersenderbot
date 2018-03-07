@@ -46,9 +46,10 @@ def textm(m):
         a=p.split('или')
         dd=0
         g=0
-        j=len(a)
+        
         
         while g< len(a):
+          j=len(a[g])
           if g<len(a) and g>0:       
             if a[g][0]==' ' and a[g][j-1]==' ':
                 dd=1
