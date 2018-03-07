@@ -47,7 +47,7 @@ def textm(m):
         print (a)
         if ili>0:
          try:
-          rd=random.randint(1,ili)
+          rd=random.randint(0,ili)
           count=0
           slovar=a[rd]
           for i in slovar:
