@@ -98,7 +98,7 @@ def textm(m):
                 else:
                   alr=0    
      else:
-        if len(m.text)<17:
+        if len(m.text)<24:
           bot.send_message(m.chat.id, 'Нахуй иди')
     elif 'p' in p and 'a' in p and 's' in p and 'u' in p and 'k' in p and 'i' in p and 'd' in p and 'r' in p:
         for x in p:
