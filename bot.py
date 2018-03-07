@@ -23,12 +23,12 @@ def sasat(m):
     bot.send_message(m.chat.id, 'О, вы выбрали пункт "сасат"! Вы сасали '+str(random.randint(1, 1000))+' членов!')
 
 def pisuk():
-    public pisuks
+    global pisuks
     pisuks=0
           
 @bot.message_handler(content_types=['text'])
 def textm(m):
-    public pisuks
+    global pisuks
     if pisuks==1:
         if 'пид' in m.text.lower():
           bot.send_message(m.chat.id, 'Нахуй иди')
