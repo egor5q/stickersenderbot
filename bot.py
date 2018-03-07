@@ -21,7 +21,7 @@ def c(m):
 
 @bot.message_handler(commands=['sasat'])
 def sasat(m):
-    bot.send_message(m.chat.id, 'О, вы выбрали пункт "сасат"! Вы сасали '+str(random.randint(1, 1000))+' членов!')
+    bot.send_message(m.chat.id, 'О, вы выбрали пункт "сасат"! Вы сасали '+str(random.randint(1, 100))+' членов!')
 
 def pisuk():
     global pisuks
@@ -36,14 +36,23 @@ def textm(m):
         n=0
         ili=0
         while n<len(p):
-            if p[n]=='и' and p[n+1]=='л' and p[n+2]=='и':
-              ili+=1
+            try:
+              if p[n]=='и' and p[n+1]=='л' and p[n+2]=='и':
+                ili+=1
+            except:
+                pass
             n+=1
         print(str(ili))
         a=p.split('или')
         print (a)
-        rd=random.randint(1,ili)
-        bot.send_message(m.chat.id, a[rd])
+        if ili>0:
+          rd=random.randint(1,ili)
+          count=0
+          for i in rd:
+                count+=1
+          if rd[count-1]=='?':
+            rd[count-1]=' '
+          bot.send_message(m.chat.id, a[rd])
     if pisuks==1:
         print('1')
         if 'п' in p and 'и' in p and 'д' in p and 'р' in p and len(p)<250:
