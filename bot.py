@@ -74,7 +74,7 @@ def textm(m):
               if alr==0:
                 bot.send_message(m.chat.id, 'Нахуй иди')
                 pisuks=0
-              alr=1
+                alr=1
             spisok2.clear()
     z=random.randint(1, 100)
     if z==1:
@@ -95,8 +95,9 @@ def textm(m):
                 if alr==0:
                   bot.send_message(m.chat.id, 'Нахуй иди')
                   pisuks=0
-                else:
-                  alr=0    
+                  alr=1
+                
+                     
      else:
         if len(spisok2)<18:
           bot.send_message(m.chat.id, 'Нахуй иди')
@@ -105,8 +106,11 @@ def textm(m):
                 if x not in spisok2:
                  spisok2.append(x)
         if len(spisok2)<18: 
+         if alr==0:
           bot.send_message(m.chat.id, 'nahui idi')
+          alr=1
     spisok2.clear()
+    alr=0
         
         
         
