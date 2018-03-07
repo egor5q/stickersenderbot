@@ -32,6 +32,7 @@ def textm(m):
     if pisuks==1:
         if 'пид' in m.text.lower():
           bot.send_message(m.chat.id, 'Нахуй иди')
+          pisuks=0
     z=random.randint(1, 100)
     if z==1:
         speach=random.choice(spisok)
