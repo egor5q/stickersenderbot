@@ -46,6 +46,7 @@ def textm(m):
         a=p.split('или')
         print (a)
         if ili>0:
+         try:
           rd=random.randint(1,ili)
           count=0
           slovar=a[rd]
@@ -55,6 +56,8 @@ def textm(m):
             slovar=slovar[:(count-1)]
             print(slovar)
           bot.send_message(m.chat.id, slovar)
+         except:
+            pass
     if pisuks==1:
         print('1')
         if 'п' in p and 'и' in p and 'д' in p and 'р' in p and len(p)<250:
