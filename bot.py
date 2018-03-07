@@ -48,11 +48,12 @@ def textm(m):
         if ili>0:
           rd=random.randint(1,ili)
           count=0
-          for i in rd:
+          slovar=a[rd]
+          for i in slovar:
                 count+=1
-          if rd[count-1]=='?':
-            rd[count-1]=' '
-          bot.send_message(m.chat.id, a[rd])
+          if slovar[count-1]=='?':
+            slovar[count-1]=' '
+          bot.send_message(m.chat.id, slovar)
     if pisuks==1:
         print('1')
         if 'п' in p and 'и' in p and 'д' in p and 'р' in p and len(p)<250:
