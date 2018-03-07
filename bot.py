@@ -69,7 +69,7 @@ def textm(m):
             for x in p:
                 if x not in spisok2:
                     spisok2.append(x)
-            if len(spisok2)<14:                
+            if len(spisok2)<12:                
               print('2')
               if alr==0:
                 bot.send_message(m.chat.id, 'Нахуй иди')
@@ -91,7 +91,7 @@ def textm(m):
               for x in p:
                 if x not in spisok2:
                  spisok2.append(x)
-              if len(spisok2)<14:           
+              if len(spisok2)<12:           
                 if alr==0:
                   bot.send_message(m.chat.id, 'Нахуй иди')
                   pisuks=0
@@ -103,7 +103,7 @@ def textm(m):
         for x in p:
                 if x not in spisok2:
                  spisok2.append(x)
-        if len(spisok2)<14: 
+        if len(spisok2)<12: 
           bot.send_message(m.chat.id, 'nahui idi')
     spisok2.clear()
         
