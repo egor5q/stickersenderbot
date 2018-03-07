@@ -52,7 +52,7 @@ def textm(m):
           for i in slovar:
                 count+=1
           if slovar[count-1]=='?':
-            slovar[count-1]=None
+            slovar=slovar[:1]
           bot.send_message(m.chat.id, slovar)
     if pisuks==1:
         print('1')
