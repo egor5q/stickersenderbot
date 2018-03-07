@@ -38,7 +38,7 @@ def textm(m):
         bot.send_message(m.chat.id, speach)
     x=m.text.lower()
     if 'писюк пид' in x or 'пасюк пид' in x:
-        pisuk=1
+        pisuks=1
         t=threading.Timer(10, pisuk)
         bot.send_message(m.chat.id, 'Нахуй иди')
     elif 'вирт' in x:
