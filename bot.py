@@ -19,7 +19,7 @@ def c(m):
 
 @bot.message_handler(commands=['sasat'])
 def sasat(m):
-    bot.send_message(m.chat.id, 'О, вы выбрали пункт "сасат"! Вы сасали '+str(random.randint(1, 10000))+' членов!')
+    bot.send_message(m.chat.id, 'О, вы выбрали пункт "сасат"! Вы сасали '+str(random.randint(1, 1000))+' членов!')
        
 if __name__ == '__main__':
   bot.polling(none_stop=True)
