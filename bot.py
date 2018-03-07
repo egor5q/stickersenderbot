@@ -33,8 +33,14 @@ def textm(m):
     global alr
     p=m.text.lower()
     if 'или' in p:
+        ili=0
+        for 'или' in p:
+            ili+=1
+        print(str(ili))
         a=p.split('или')
         print (a)
+        rd=random.randint(1,2)
+        bot.send_message(m.chat.id, a[rd])
     if pisuks==1:
         print('1')
         if 'п' in p and 'и' in p and 'д' in p and 'р' in p and len(p)<250:
