@@ -21,6 +21,15 @@ def c(m):
 def sasat(m):
     bot.send_message(m.chat.id, 'О, вы выбрали пункт "сасат"! Вы сасали '+str(random.randint(1, 1000))+' членов!')
        
+        
+@bot.message_handler(content_types=['text'])
+def textm(m):
+    x=m.text.lower()
+    if 'хуй' in x:
+        bot.send_message(m.chat.id, 'ВЫ СКАЗАЛИ "ХУЙ"!')
+        
+        
+        
 if __name__ == '__main__':
   bot.polling(none_stop=True)
 
