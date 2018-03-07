@@ -63,7 +63,7 @@ def textm(m):
           bot.send_message(m.chat.id, slovar)
          except:
             pass
-    if 'пасюк пидр' in p or 'писюк пидр' in p or 'пасюк пидор' in p or 'писюк пидр' in text:
+    if 'пасюк пидр' in p or 'писюк пидр' in p or 'пасюк пидор' in p or 'писюк пидр' in p:
         bot.send_message(m.chat.id, 'Нахуй иди')
         alr=1
     if pisuks==1:
