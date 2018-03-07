@@ -63,7 +63,7 @@ def textm(m):
           bot.send_message(m.chat.id, slovar)
          except:
             pass
-    elif pisuks==1:
+    if pisuks==1:
         print('1')
         if 'п' in p and 'и' in p and 'д' in p and 'р' in p and len(p)<250:
             for x in p:
@@ -80,7 +80,7 @@ def textm(m):
     if z==1:
         speach=random.choice(spisok)
         bot.send_message(m.chat.id, speach)
-    elif 'п' in p and 'с' in p and 'ю' in p and 'к' in p and len(p)<250:
+    if 'п' in p and 'с' in p and 'ю' in p and 'к' in p and len(p)<250:
         pisuks=1
         print('3')
     if 'п' in p and 'и' in p and 'ю' in p and 'к' in p and 'д' in p and len(p)<250:
