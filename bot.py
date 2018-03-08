@@ -25,7 +25,7 @@ def sasat(m):
     bot.send_message(m.chat.id, 'О, вы выбрали пункт "сасат"! Вы сасали '+str(random.randint(1, 100))+' членов!')
 
 @bot.message_handler(commands=['extend'])
-def penis(m):
+def penises(m):
     global penis
     penis+=0.1
     bot.send_message(m.chat.id, 'Ура! Вы увеличили мой пенис! Теперь он '+str(penis)+ 'см!')
