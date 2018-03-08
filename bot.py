@@ -13,6 +13,7 @@ token = os.environ['TELEGRAM_TOKEN']
 bot = telebot.TeleBot(token)
 pisuks=0
 alr=0
+penis=0
 spisok=['Ппц', 'Мда.', 'Дороу']
 spisok2=[]
 @bot.message_handler(commands=['chlen'])
@@ -23,6 +24,12 @@ def c(m):
 def sasat(m):
     bot.send_message(m.chat.id, 'О, вы выбрали пункт "сасат"! Вы сасали '+str(random.randint(1, 100))+' членов!')
 
+@bot.message_handler(commands=['penis'])
+def penis(m):
+    global penis
+    penis+=0.1
+    bot.send_message(m.chat.id, 'Ура! Вы увеличили мой пенис! Теперь он '+str(penis)+ 'см!')
+    
 def pisuk():
     global pisuks
     pisuks=0
