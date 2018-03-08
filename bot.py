@@ -28,6 +28,7 @@ def sasat(m):
 def penises(m):
     global penis
     penis+=0.1
+    penis=round(penis, 1)
     bot.send_message(m.chat.id, 'Ура! Вы увеличили мой пенис! Теперь он '+str(penis)+ 'см!')
     
 def pisuk():
