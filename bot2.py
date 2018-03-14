@@ -21,7 +21,7 @@ collection = db.collection
 size={'x':445}
 
 sizes=db.sizes
-sizeid=sizes.insert_one(size).inserted_id
+sizeid=sizes.insert_one(size)
 pprint.pprint(sizes.find_one())
 
 
