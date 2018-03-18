@@ -11,9 +11,14 @@ from telebot import types
 from emoji import emojize
 token = os.environ['TELEGRAM_TOKEN']
 bot = telebot.TeleBot(token)
+
+client=MongoClient('mongodb+srv://egor5q:123@db-fej0s.mongodb.net/test')
+db=client.db1
+collection=db.coll
+
+
 pisuks=0
 alr=0
-penis=450.5
 spisok=['Ппц', 'Мда.', 'Дороу']
 spisok2=[]
 @bot.message_handler(commands=['chlen'])
@@ -26,10 +31,13 @@ def sasat(m):
 
 @bot.message_handler(commands=['extend'])
 def penises(m):
-    global penis
-    penis+=0.1
-    penis=round(penis, 1)
-    bot.send_message(m.chat.id, 'Ура! Вы увеличили мой пенис! Теперь он '+str(penis)+ 'см!')
+    try:
+        dick={'penis':450.0}
+        collection.save(dick)
+    except:pass
+    collection.update_one({'penis':{'$exsist':True}},{'$inc':{'penis':0.1}})
+    x = collection.find_one({'penis':{'$exsists':True}})
+    bot.send_message(m.chat.id, 'Ура! Вы увеличили мой пенис! Теперь он '+str(x['penis'])+ 'см!')
     
 def pisuk():
     global pisuks
