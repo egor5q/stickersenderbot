@@ -36,7 +36,7 @@ def penises(m):
         dick={'penis':450.0}
         collection.save(dick)
     except:pass
-    collection.update_one({'penis':{'$exsist':True}},{'$inc':{'penis':0.1}})
+    collection.update_one({'penis':{'$exsists:True}},{'$inc':{'penis':0.1}})
     x = collection.find_one({'penis':{'$exsists':True}})
     bot.send_message(m.chat.id, 'Ура! Вы увеличили мой пенис! Теперь он '+str(x['penis'])+ 'см!')
     
