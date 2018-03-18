@@ -32,8 +32,8 @@ def sasat(m):
 
 @bot.message_handler(commands=['extend'])
 def penises(m):
-    collection.update_one({'penis':{'$exsists':True}},{'$inc':{'penis':0.1}})
-    x = collection.find_one({'penis':{'$exsists':True}})
+    collection.update_one({'penis':{'$exists':True}},{'$inc':{'penis':0.1}})
+    x = collection.find_one({'penis':{'$exists':True}})
     bot.send_message(m.chat.id, 'Ура! Вы увеличили мой пенис! Теперь он '+str(x['penis'])+ 'см!')
     
 def pisuk():
