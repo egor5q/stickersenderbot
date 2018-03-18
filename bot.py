@@ -35,7 +35,7 @@ def penises(m):
     collection.update_one({'penis':{'$exists':True}},{'$inc':{'penis':0.1}})
     x = collection.find_one({'penis':{'$exists':True}})
     x=round(x['penis'], 1)
-    bot.send_message(m.chat.id, 'Ура! Вы увеличили мой пенис! Теперь он '+str(x['penis'])+ 'см!')
+    bot.send_message(m.chat.id, 'Ура! Вы увеличили мой пенис! Теперь он '+str(x)+ 'см!')
     
 def pisuk():
     global pisuks
