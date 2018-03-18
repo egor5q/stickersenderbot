@@ -98,7 +98,7 @@ def textm(m):
           except:
             pass
     if 'пасюк пидр' in p or 'писюк пидр' in p or 'пасюк пидор' in p or 'писюк пидр' in p:
-        bot.send_message(m.chat.id, 'Нахуй иди')
+        bot.send_message(m.chat.id, 'Тсс')
         alr=1
     if pisuks==1:
         print('1')
@@ -109,7 +109,7 @@ def textm(m):
             if len(spisok2)<15:                
               print('2')
               if alr==0:
-                bot.send_message(m.chat.id, 'Нахуй иди')
+                bot.send_message(m.chat.id, 'Тсс')
                 pisuks=0
                 alr=1
             spisok2.clear()
@@ -132,14 +132,14 @@ def textm(m):
                  spisok2.append(x)
               if len(spisok2)<18:           
                 if alr==0:
-                  bot.send_message(m.chat.id, 'Нахуй иди')
+                  bot.send_message(m.chat.id, 'Тсс')
                   pisuks=0
                   alr=1
                 
                      
      else:
         if len(spisok2)<15:
-          bot.send_message(m.chat.id, 'Нахуй иди')
+          bot.send_message(m.chat.id, 'Тсс')
     elif 'p' in p and 'a' in p and 's' in p and 'u' in p and 'k' in p and 'i' in p and 'd' in p and 'r' in p:
         for x in p:
                 if x not in spisok2:
