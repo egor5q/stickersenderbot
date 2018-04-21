@@ -35,21 +35,25 @@ stickerid=['CAADAgAD5QUAAnwFBxtu71sj1snukAI',
 @bot.message_handler(commands=['setchance'])
 def getadm(m):
      global chance
+     i=0
      if m.chat.id<0:
           x=bot.get_chat_administrators(m.chat.id)
           for z in x:
-             if m.from_user.id==z:
+             if m.from_user==z:
                massiv=m.text.split('/setchance')
                try:
                     int(massiv[1])
                     chance=massiv[1]
+                    i=0
                     bot.send_message(m.chat.id, 'Вы успешно изменили вероятность отправки стикера после мата на '+str(massiv[1])+'% !')
                except:
                     bot.send_message(m.chat.id, 'Неверный формат. Используйте следующий пример:\n/setchance *60*', parse_mode='markdown')
              else:
-                    bot.send_message(m.chat.id, 'Только администраторы чата могут использовать эту команду!')
+                    i=1
      else:
           bot.send_message(m.chat.id, 'Эту команду можно использовать только в группе!')
+     if i==1:
+          bot.send_message(m.chat.id, 'Только администраторы чата могут использовать эту команду!')
 
 
 @bot.message_handler(content_types=['text'])
