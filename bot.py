@@ -40,10 +40,17 @@ def penises(m):
 def pisuk():
     global pisuks
     pisuks=0
-          
+
+    
+    
+    
+    
 @bot.message_handler(content_types=['text'])
 def textm(m):
-    print(m)
+    try:
+        print(m.sticker)
+    except:
+        pass
     global pisuks
     global alr
     p=m.text.lower()
