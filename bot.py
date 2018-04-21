@@ -46,8 +46,8 @@ def getadm(m):
                     bot.send_message(m.chat.id, 'Вы успешно изменили вероятность отправки стикера после мата на '+str(massiv[1])+'% !')
                except:
                     bot.send_message(m.chat.id, 'Неверный формат. Используйте следующий пример:\n/setchance *60*', parse_mode='markdown')
-          else:
-               bot.send_message(m.chat.id, 'Только администраторы чата могут использовать эту команду!')
+             else:
+                    bot.send_message(m.chat.id, 'Только администраторы чата могут использовать эту команду!')
      else:
           bot.send_message(m.chat.id, 'Эту команду можно использовать только в группе!')
 
