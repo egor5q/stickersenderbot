@@ -46,7 +46,7 @@ def getadm(m):
                massiv=m.text.split('/setchance')
                try:
                     int(massiv[1])
-                    chance=massiv[1]
+                    chance=int(massiv[1])
                     bot.send_message(m.chat.id, 'Вы успешно изменили вероятность отправки стикера после мата на '+str(massiv[1])+'% !')
                except:
                     bot.send_message(m.chat.id, 'Неверный формат. Используйте следующий пример:\n/setchance *60*', parse_mode='markdown')
