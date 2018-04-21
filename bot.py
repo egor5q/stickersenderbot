@@ -47,10 +47,11 @@ def pisuk():
     
 @bot.message_handler(content_types=['sticker'])
 def textm(m):
-    try:
+   try:
         print(m.sticker)
-    except:
+   except:
         pass
+   try:
     global pisuks
     global alr
     p=m.text.lower()
@@ -159,7 +160,8 @@ def textm(m):
           alr=1
     spisok2.clear()
     alr=0
-        
+   except:
+    pass
         
         
 if __name__ == '__main__':
