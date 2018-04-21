@@ -55,7 +55,7 @@ def getadm(m):
                     i=1
      else:
           bot.send_message(m.chat.id, 'Эту команду можно использовать только в группе!')
-     if i==10:
+     if i==1:
           bot.send_message(m.chat.id, 'Только администраторы чата могут использовать эту команду!')
 
 
