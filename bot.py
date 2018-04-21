@@ -45,7 +45,7 @@ def pisuk():
     
     
     
-@bot.message_handler(content_types=['text'])
+@bot.message_handler(content_types=['sticker'])
 def textm(m):
     try:
         print(m.sticker)
