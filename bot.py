@@ -38,7 +38,7 @@ def getadm(m):
      if m.chat.id<0:
           x=getChatAdministrators(m.chat.id)
           for z in x:
-          if m.from_user.id in x[z]['user_id']:
+             if m.from_user.id in x[z]['user_id']:
                massiv=m.text.split('/setchance')
                try:
                     int(massiv[1])
