@@ -43,6 +43,7 @@ def pisuk():
           
 @bot.message_handler(content_types=['text'])
 def textm(m):
+    print(m)
     global pisuks
     global alr
     p=m.text.lower()
