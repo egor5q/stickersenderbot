@@ -40,7 +40,7 @@ def getadm(m):
           x=bot.get_chat_administrators(m.chat.id)
           for z in x:
              print(z)
-             if m.from_user==z:
+             if m.from_user.id==z['user']['id']:
                massiv=m.text.split('/setchance')
                try:
                     int(massiv[1])
