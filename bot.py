@@ -36,7 +36,7 @@ stickerid=['CAADAgAD5QUAAnwFBxtu71sj1snukAI',
 def getadm(m):
      global chance
      if m.chat.id<0:
-          x=getChatAdministrators(m.chat.id)
+          x=GetChatAdministrators(m.chat.id)
           for z in x:
              if m.from_user.id in x[z]['user_id']:
                massiv=m.text.split('/setchance')
