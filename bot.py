@@ -35,7 +35,7 @@ stickerid=['CAADAgAD5QUAAnwFBxtu71sj1snukAI',
 def textm(m):
     x=0
     for slovo in mat:
-        if slovo.lower() in m.text:
+        if slovo.lower() in m.text.lower():
             x=1
     if x==1:
         z=random.randint(0, len(stickerid)-1)
