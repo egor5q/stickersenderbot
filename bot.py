@@ -41,7 +41,7 @@ def getadm(m):
           for z in x:
              print(z)
              print(m.from_user)
-             if m.from_user==z['user']:
+             if m.from_user==z:
                massiv=m.text.split('/setchance')
                try:
                     int(massiv[1])
