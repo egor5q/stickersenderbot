@@ -41,20 +41,21 @@ def getadm(m):
           for z in x:
              print(z)
              print(m.from_user)
-             if m.from_user==z:
+             if m.from_user.id==z.user.id:
+               i=10
                massiv=m.text.split('/setchance')
                try:
                     int(massiv[1])
                     chance=massiv[1]
-                    i=0
                     bot.send_message(m.chat.id, 'Вы успешно изменили вероятность отправки стикера после мата на '+str(massiv[1])+'% !')
                except:
                     bot.send_message(m.chat.id, 'Неверный формат. Используйте следующий пример:\n/setchance *60*', parse_mode='markdown')
              else:
+               if i!=10:
                     i=1
      else:
           bot.send_message(m.chat.id, 'Эту команду можно использовать только в группе!')
-     if i==1:
+     if i==10:
           bot.send_message(m.chat.id, 'Только администраторы чата могут использовать эту команду!')
 
 
